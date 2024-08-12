@@ -11,7 +11,7 @@ st.title("Chatbot with text-classification")
 if "chat_started" not in st.session_state:
     st.session_state["chat_started"] = True
     st.session_state["chat_history"] = []
-    st.session_state['chat_anaylzer'] = pipeline('text-classification')
+    st.session_state['chat_anaylzer'] = pipeline('text-classification', model="monologg/koelectra-base-finetuned-nsmc")
 
 
 llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.getenv("OPENAI_API_KEY"))
